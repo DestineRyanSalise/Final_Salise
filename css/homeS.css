@@ -46,11 +46,10 @@ nav a:active {
 
 
 .video-container {
-    margin: 30px auto;
-    text-align: left;
+    margin: 120px auto 30px; 
     width: 50%;  
+    text-align: left;
 }
-
 
 video, audio {
     width: 100%;
@@ -62,12 +61,12 @@ video, audio {
 
 .images-container {
     display: flex;
-    justify-content: flex-end;  
-    gap: 20px;  
+    justify-content: flex-end; 
+    gap: 20px;
     padding: 20px;
-    margin-top: 120px;
+    margin-top: 30px;
     flex-grow: 1;
-    width: 100%;  
+    width: 100%;
 }
 
 .image-item {
@@ -85,6 +84,7 @@ video, audio {
     transform: scale(1.9);
 }
 
+
 .sprite-icon {
     background: url('sprite.png') no-repeat;
     width: 50px;
@@ -92,13 +92,13 @@ video, audio {
     background-position: -10px -10px;
 }
 
-
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto;  }
+    margin-top: auto;  
+}
 
 a[href*="nav"] {
     color: green;
