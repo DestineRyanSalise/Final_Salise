@@ -91,10 +91,9 @@ video {
 footer {
     background-color: #333;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px 0;
 }
-
 
 a[href*="about"] {
     color: green;
