@@ -1,12 +1,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
-
 
 header {
     background-color: #333;
@@ -35,23 +34,28 @@ nav a:hover {
     color: #00bcd4;
 }
 
-nav a:visited {
-    color: #7b68ee;
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px;
+    margin-top: 80px; 
+    padding: 20px;
 }
 
-nav a:active {
-    color: red;
+
+.video-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-
-.video-container{
-    margin: 120px auto;
-    text-align: center;
-}
-
-video, audio {
-    width: 80%;
-    max-width: 600px;
+.video-container video {
+    width: 100%;
+    max-width: 500px;
     border: 2px solid #ddd;
     border-radius: 8px;
 }
@@ -59,32 +63,39 @@ video, audio {
 
 .images-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px;
+    justify-items: center;
 }
 
 .image-item {
     text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
     transition: transform 0.3s ease;
 }
 
 .image-item img {
-    width: 1000px;
-    height: 1000px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover; 
     border-radius: 5px;
 }
 
 .image-item:hover {
-    transform: scale(1.8); 
+    transform: scale(1.1); 
 }
 
+figcaption a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
 
-.sprite-icon {
-    background: url('sprite.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    background-position: -10px -10px; /* Positioning a sprite */
+figcaption a:hover {
+    color: #0056b3;
 }
 
 
@@ -93,14 +104,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-
-a[href*="nav"] {
-    color: green;
-}
-
-.images-container div {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
 }
