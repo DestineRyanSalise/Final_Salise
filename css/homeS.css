@@ -72,13 +72,13 @@ video, audio {
 }
 
 .image-item img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 5px;
 }
 
 .image-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.9);
 }
 
 .sprite-icon {
