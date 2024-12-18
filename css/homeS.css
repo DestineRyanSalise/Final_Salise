@@ -44,12 +44,12 @@ nav a:active {
 }
 
 
-.video-container, .audio-container {
+.video-container, {
     margin: 120px auto;
     text-align: center;
 }
 
-video, audio {
+video, {
     width: 80%;
     max-width: 600px;
     border: 2px solid #ddd;
