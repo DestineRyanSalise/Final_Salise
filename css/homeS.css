@@ -1,12 +1,13 @@
-home css
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
 
 header {
     background-color: #333;
@@ -43,8 +44,7 @@ nav a:active {
     color: red;
 }
 
-
-.video-container{
+.video-container {
     margin: 120px auto;
     text-align: center;
 }
@@ -56,12 +56,13 @@ video, audio {
     border-radius: 8px;
 }
 
-
 .images-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    margin-top: 120px;
 }
 
 .image-item {
@@ -76,9 +77,8 @@ video, audio {
 }
 
 .image-item:hover {
-    transform: scale(1.8); 
+    transform: scale(1.1);
 }
-
 
 .sprite-icon {
     background: url('sprite.png') no-repeat;
@@ -87,14 +87,13 @@ video, audio {
     background-position: -10px -10px;
 }
 
-
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
+    margin-top: auto;
 }
-
 
 a[href*="nav"] {
     color: green;
