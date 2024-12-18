@@ -7,81 +7,83 @@ body, h1, p {
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #333;
+    background-color: black;
     color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-}
 
-
-.container {
+.content {
     display: flex;
-    height: 100vh; 
+    margin-top: 80px; 
 }
 
-.left-section {
-    width: 50%;
+
+.video-container {
+    flex: 1;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-.video-description p {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-.right-section {
-    width: 50%;
-    background-color: #e0efff;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+.video-container video {
+    width: 90%;
+    max-width: 400px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.images-container {
+    flex: 1;
+    background-color: #e0efff; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
     padding: 20px;
 }
 
 .image-item {
-    margin: 20px 0;
-    font-size: 1.2em;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.image-item p {
-    margin: 5px 0;
+.image-item img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 5px;
 }
 
-nav a {
+.image-item figcaption {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+footer {
+    background-color: black;
     color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    transition: color 0.3s ease;
+    text-align: center;
+    padding: 10px 0;
 }
-
-nav a:hover {
-    color: #00bcd4;
-}
-
-nav a:visited {
-    color: #7b68ee;
-}
-
-nav a:active {
-    color: red;
-}
-
-
-
