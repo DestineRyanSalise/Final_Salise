@@ -49,7 +49,7 @@ nav a:active {
     text-align: center;
 }
 
-video, {
+video {
     width: 80%;
     max-width: 600px;
     border: 2px solid #ddd;
