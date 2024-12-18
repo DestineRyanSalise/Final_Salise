@@ -56,14 +56,15 @@ video, audio {
     border-radius: 8px;
 }
 
+
 .images-container {
     display: flex;
-    justify-content: right;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: flex-end; 
+    gap: 20px;  
     padding: 20px;
     margin-top: 120px;
     flex-grow: 1;
+    width: 100%;  
 }
 
 .image-item {
