@@ -1,10 +1,12 @@
 
-body {
-    font-family: Arial, sans-serif;
+body, h1, p {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -23,6 +25,45 @@ header h1 {
     margin: 0;
 }
 
+
+.container {
+    display: flex;
+    height: 100vh; 
+}
+
+.left-section {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.video-description p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.right-section {
+    width: 50%;
+    background-color: #e0efff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-item {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.image-item p {
+    margin: 5px 0;
+}
+
 nav a {
     color: white;
     text-decoration: none;
@@ -34,74 +75,13 @@ nav a:hover {
     color: #00bcd4;
 }
 
+nav a:visited {
+    color: #7b68ee;
+}
 
-.content {
-    display: grid;
-    grid-template-columns: 1fr 2fr; 
-    gap: 20px;
-    margin-top: 80px; 
-    padding: 20px;
+nav a:active {
+    color: red;
 }
 
 
-.video-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
-}
 
-.video-container video {
-    width: 100%;
-    max-width: 500px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-}
-
-
-.images-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-}
-
-.image-item {
-    text-align: center;
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    transition: transform 0.3s ease;
-}
-
-.image-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover; 
-    border-radius: 5px;
-}
-
-.image-item:hover {
-    transform: scale(1.1); 
-}
-
-figcaption a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s;
-}
-
-figcaption a:hover {
-    color: #0056b3;
-}
-
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
