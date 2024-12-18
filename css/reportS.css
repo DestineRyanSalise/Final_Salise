@@ -27,14 +27,22 @@ header h1 {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+    margin-right: 15px;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #555;
-    border-radius: 5px;
+    color: #00bcd4;
 }
+
+nav a:visited {
+    color: #7b68ee;
+}
+
+nav a:active {
+    color: red;
+}
+
 
 .report-container {
     margin: 100px auto 40px auto;
