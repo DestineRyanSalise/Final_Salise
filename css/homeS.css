@@ -44,13 +44,16 @@ nav a:active {
     color: red;
 }
 
+
 .video-container {
     margin: 30px auto;
     text-align: left;
+    width: 50%;  
 }
 
+
 video, audio {
-    width: 80%;
+    width: 100%;
     max-width: 300px;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -59,7 +62,7 @@ video, audio {
 
 .images-container {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;  
     gap: 20px;  
     padding: 20px;
     margin-top: 120px;
@@ -89,13 +92,13 @@ video, audio {
     background-position: -10px -10px;
 }
 
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto; 
-}
+    margin-top: auto;  }
 
 a[href*="nav"] {
     color: green;
