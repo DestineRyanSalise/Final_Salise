@@ -70,8 +70,8 @@ video, audio {
 }
 
 .image-item img {
-    width: 1000px;
-    height: 1000px;
+    width: 200px;
+    height: 200px;
     border-radius: 5px;
 }
 
