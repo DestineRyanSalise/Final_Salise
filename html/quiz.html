@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDG Quiz - C.P.F</title>
+  <link rel="stylesheet" href="homeS.css" />
+  <style>
+    .quiz-container {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .quiz-container h2 {
+      margin-bottom: 10px;
+    }
+
+    .quiz-container button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .choices-container button {
+      display: block;
+      margin: 5px 0;
+      padding: 10px;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .choices-container button:hover {
+      background-color: #444;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>C.P.F</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="quiz.html">SDG Quiz</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="quiz-container">
+    <h2>SDG Awareness Quiz</h2>
+    <div id="quiz">
+      <p id="question"></p>
+      <div class="choices-container" id="choices"></div>
+      <button onclick="nextQuestion()">Next</button>
+      <p class="result" id="result"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 C.P.F. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the goal of SDG 1?",
+        choices: ["Zero Hunger", "No Poverty", "Good Health", "Clean Water"],
+        answer: 1
+      },
+      {
+        question: "What does SDG stand for?",
+        choices: ["Sustainable Development Goals", "Social Development Group", "Standard Daily Goals", "Saving Dying Generations"],
+        answer: 0
+      },
+      {
+        question: "Which SDG focuses on quality education?",
+        choices: ["SDG 3", "SDG 4", "SDG 5", "SDG 6"],
+        answer: 1
+      }
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const choicesEl = document.getElementById("choices");
+    const resultEl = document.getElementById("result");
+
+    function loadQuestion() {
+      const current = quizData[currentIndex];
+      questionEl.textContent = current.question;
+      choicesEl.innerHTML = "";
+
+      current.choices.forEach((choice, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = choice;
+        btn.onclick = () => checkAnswer(index);
+        choicesEl.appendChild(btn);
+      });
+
+      resultEl.textContent = "";
+    }
+
+    function checkAnswer(selected) {
+      const correct = quizData[currentIndex].answer;
+      if (selected === correct) {
+        score++;
+        resultEl.textContent = "Correct!";
+      } else {
+        resultEl.textContent = "Wrong!";
+      }
+    }
+
+    function nextQuestion() {
+      currentIndex++;
+      if (currentIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = "Quiz Completed!";
+        choicesEl.innerHTML = "";
+        resultEl.textContent = `Your score: ${score} / ${quizData.length}`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
