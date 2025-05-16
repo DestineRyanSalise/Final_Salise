@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - C.P.F</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>C.P.F</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="quiz.html">SDG Quiz</a>
+    </nav>
+    <p class="tagline">Together for a safer online space for children.</p>
+  </header>
+
+  <main class="container">
+    <h2>Join Our Campaign</h2>
+    <form id="signupForm">
+      <label>First Name * <input type="text" id="firstName" required></label><span class="error" id="firstNameError"></span><br>
+      <label>Last Name * <input type="text" id="lastName" required></label><span class="error" id="lastNameError"></span><br>
+      <p>Sex *:</p>
+      <label><input type="radio" name="sex" value="Male"> Male</label>
+      <label><input type="radio" name="sex" value="Female"> Female</label>
+      <label><input type="radio" name="sex" value="Prefer not to say"> Prefer not to say</label>
+      <span class="error" id="sexError"></span><br>
+      <label>Email * <input type="email" id="email" required></label><span class="error" id="emailError"></span><br>
+      <label>Password * <input type="password" id="password" required></label><span class="error" id="passwordError"></span><br>
+      <label>Contact Number <input type="text" id="contact"></label><br>
+      <label>Why you support our campaign * <textarea id="reason" required></textarea></label><span class="error" id="reasonError"></span><br>
+
+      <button type="submit">Join the Movement</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 C.P.F. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
