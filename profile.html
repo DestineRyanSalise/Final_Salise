@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile - C.P.F</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>C.P.F</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="quiz.html">SDG Quiz</a>
+    </nav>
+    <p class="tagline">Thank you for supporting our campaign.</p>
+  </header>
+
+  <main class="container">
+    <h2>Your Profile</h2>
+    <p><strong>First Name:</strong> <span id="profileFirstName"></span></p>
+    <p><strong>Last Name:</strong> <span id="profileLastName"></span></p>
+    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    <p><strong>Sex:</strong> <span id="profileSex"></span></p>
+    <p><strong>Why You Support:</strong> <span id="profileReason"></span></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 C.P.F. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('profileFirstName').textContent = localStorage.getItem('firstName');
+    document.getElementById('profileLastName').textContent = localStorage.getItem('lastName');
+    document.getElementById('profileEmail').textContent = localStorage.getItem('email');
+    document.getElementById('profileSex').textContent = localStorage.getItem('sex');
+    document.getElementById('profileReason').textContent = localStorage.getItem('reason');
+  </script>
+</body>
+</html>
