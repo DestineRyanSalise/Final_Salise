@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign Up - C.P.F</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signup.css" />
 </head>
 <body>
   <header>
@@ -12,26 +12,49 @@
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="report.html">Report</a>
-      <a href="quiz.html">SDG Quiz</a>
-      <a href="signuphtml">Sign Up</a>
+      <a href="signup.html">Sign Up</a>
     </nav>
-    <p class="tagline">Together for a safer online space for children.</p>
   </header>
 
   <main class="container">
     <h2>Join Our Campaign</h2>
-    <form id="signupForm">
-      <label>First Name * <input type="text" id="firstName" required></label><span class="error" id="firstNameError"></span><br>
-      <label>Last Name * <input type="text" id="lastName" required></label><span class="error" id="lastNameError"></span><br>
-      <p>Sex *:</p>
-      <label><input type="radio" name="sex" value="Male"> Male</label>
-      <label><input type="radio" name="sex" value="Female"> Female</label>
-      <label><input type="radio" name="sex" value="Prefer not to say"> Prefer not to say</label>
-      <span class="error" id="sexError"></span><br>
-      <label>Email * <input type="email" id="email" required></label><span class="error" id="emailError"></span><br>
-      <label>Password * <input type="password" id="password" required></label><span class="error" id="passwordError"></span><br>
-      <label>Contact Number <input type="text" id="contact"></label><br>
-      <label>Why you support our campaign * <textarea id="reason" required></textarea></label><span class="error" id="reasonError"></span><br>
+    <form id="signupForm" novalidate>
+      <label for="firstName">First Name * 
+        <input type="text" id="firstName" name="firstName" required />
+        <span class="error" id="firstNameError"></span>
+      </label>
+
+      <label for="lastName">Last Name * 
+        <input type="text" id="lastName" name="lastName" required />
+        <span class="error" id="lastNameError"></span>
+      </label>
+
+      <p>Sex *</p>
+      <div class="radio-group">
+        <label><input type="radio" name="sex" value="Male" /> Male</label>
+        <label><input type="radio" name="sex" value="Female" /> Female</label>
+        <label><input type="radio" name="sex" value="Prefer not to say" /> Prefer not to say</label>
+        <span class="error" id="sexError"></span>
+      </div>
+
+      <label for="email">Email * 
+        <input type="email" id="email" name="email" required />
+        <span class="error" id="emailError"></span>
+      </label>
+
+      <label for="password">Password * 
+        <input type="password" id="password" name="password" required />
+        <span class="error" id="passwordError"></span>
+      </label>
+
+      <label for="contact">Contact Number (Optional)
+        <input type="text" id="contact" name="contact" />
+      </label>
+
+      <label for="reason">Why you support our campaign * 
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+        <span class="error" id="reasonError"></span>
+      </label>
 
       <button type="submit">Join the Movement</button>
     </form>
@@ -41,6 +64,58 @@
     <p>&copy; 2024 C.P.F. All rights reserved.</p>
   </footer>
 
+  <script>
+    const form = document.getElementById('signupForm');
 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+      let isValid = true;
+
+      const firstName = form.firstName.value.trim();
+      const lastName = form.lastName.value.trim();
+      const sex = form.sex.value;
+      const email = form.email.value.trim();
+      const password = form.password.value.trim();
+      const reason = form.reason.value.trim();
+
+      if (!firstName) {
+        document.getElementById('firstNameError').textContent = 'required';
+        isValid = false;
+      }
+      if (!lastName) {
+        document.getElementById('lastNameError').textContent = 'required';
+        isValid = false;
+      }
+      if (!sex) {
+        document.getElementById('sexError').textContent = 'required';
+        isValid = false;
+      }
+      if (!email) {
+        document.getElementById('emailError').textContent = 'required';
+        isValid = false;
+      }
+      if (!password) {
+        document.getElementById('passwordError').textContent = 'required';
+        isValid = false;
+      }
+      if (!reason) {
+        document.getElementById('reasonError').textContent = 'required';
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      localStorage.setItem('firstName', firstName);
+      localStorage.setItem('lastName', lastName);
+      localStorage.setItem('sex', sex);
+      localStorage.setItem('email', email);
+      localStorage.setItem('reason', reason);
+
+      window.location.href = 'profile.html';
+    });
+  </script>
 </body>
 </html>
