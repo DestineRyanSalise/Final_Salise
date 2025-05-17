@@ -1,9 +1,17 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Profile - C.P.F</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    header { background: #003366; color: white; padding: 1em; text-align: center; }
+    nav a { margin: 0 1em; color: white; text-decoration: none; }
+    .container { max-width: 600px; margin: 2em auto; background: white; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    p { font-size: 1.1em; margin: 0.5em 0; }
+  </style>
 </head>
 <body>
   <header>
@@ -12,30 +20,29 @@
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="report.html">Report</a>
-      <a href="quiz.html">SDG Quiz</a>
+      <a href="proj_signup_salise.html">Sign Up</a>
     </nav>
-    <p class="tagline">Thank you for supporting our campaign.</p>
   </header>
 
   <main class="container">
     <h2>Your Profile</h2>
     <p><strong>First Name:</strong> <span id="profileFirstName"></span></p>
     <p><strong>Last Name:</strong> <span id="profileLastName"></span></p>
-    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
     <p><strong>Sex:</strong> <span id="profileSex"></span></p>
+    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
     <p><strong>Why You Support:</strong> <span id="profileReason"></span></p>
   </main>
 
-  <footer>
-    <p>&copy; 2024 C.P.F. All rights reserved.</p>
+  <footer style="text-align:center; padding: 1em; background:#eee; margin-top:2em;">
+    &copy; 2024 C.P.F. All rights reserved.
   </footer>
 
   <script>
-    document.getElementById('profileFirstName').textContent = localStorage.getItem('firstName');
-    document.getElementById('profileLastName').textContent = localStorage.getItem('lastName');
-    document.getElementById('profileEmail').textContent = localStorage.getItem('email');
-    document.getElementById('profileSex').textContent = localStorage.getItem('sex');
-    document.getElementById('profileReason').textContent = localStorage.getItem('reason');
+    document.getElementById('profileFirstName').textContent = localStorage.getItem('firstName') || 'N/A';
+    document.getElementById('profileLastName').textContent = localStorage.getItem('lastName') || 'N/A';
+    document.getElementById('profileSex').textContent = localStorage.getItem('sex') || 'N/A';
+    document.getElementById('profileEmail').textContent = localStorage.getItem('email') || 'N/A';
+    document.getElementById('profileReason').textContent = localStorage.getItem('reason') || 'N/A';
   </script>
 </body>
 </html>
